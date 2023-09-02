@@ -2,65 +2,83 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class SayiOyunu : MonoBehaviour
 {
     int randomSayi;
-    int inputSayi;
+    int currentDigit;
+    string hiddenNumber;
+    float displayTimer = 0.5f;
+    bool isDisplayingDigit = true;
 
-    public Text input, random;
-    public GameObject truePanel, falsePanel, info,bulmaca;
+    public Text numberText,inputText,rebember;
+    public GameObject bulmaca,truePanel,FalsePanel;
+
     void Start()
     {
-        StartCoroutine(Info());
+        
+        GenerateRandomNumber();
+        StartCoroutine(DisplayNumber());
     }
 
-    
-    void Update()
+    void GenerateRandomNumber()
     {
-        
+        randomSayi = Random.Range(10000, 99999); // 10000 ile 99999 arasýnda 5 basamaklý bir rastgele sayý oluþturabilirsiniz.
+        hiddenNumber = randomSayi.ToString();
+        currentDigit = 0;
     }
-    
-    public void Dogrula()
+
+    IEnumerator DisplayNumber()
     {
-        string x = input.text;
-        inputSayi = int.Parse(x);
-        if (inputSayi == randomSayi)
+        rebember.transform.DOScale(2f, 1f).SetEase(Ease.OutElastic);
+        yield return new WaitForSeconds(1f);
+        while (currentDigit < hiddenNumber.Length)
         {
-            StartCoroutine(Correct());
+            if (isDisplayingDigit)
+            {
+                numberText.text = numberText.text.Substring(0, currentDigit) + hiddenNumber[currentDigit];
+                isDisplayingDigit = false;
+            }
+            else
+            {
+                numberText.text = numberText.text.Substring(0, currentDigit) + "*";
+                isDisplayingDigit = true;
+                currentDigit++;
+            }
+
+            yield return new WaitForSeconds(displayTimer);
         }
-        else
-        {
-            StartCoroutine(Wrong());
-        }
+
+        // Tüm rakamlar göründü, sayýyý gizle
+        numberText.text = new string('*', 5);
     }
-    void RandomSayi()
+    IEnumerator Wrong()
     {
-        randomSayi = Random.Range(10000, 100000);
-        random.text = "" + randomSayi;
+        FalsePanel.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        FalsePanel.SetActive(false);
+        GenerateRandomNumber();
+        StartCoroutine(DisplayNumber());
     }
     IEnumerator Correct()
     {
         truePanel.SetActive(true);
         yield return new WaitForSeconds(1f);
         bulmaca.SetActive(false);
+        
     }
-    IEnumerator Wrong()
+    public void Dogrula()
     {
-        falsePanel.SetActive(true);
-        yield return new WaitForSeconds(1f);
-        falsePanel.SetActive(false);
-        StartCoroutine(Info());
+        if (int.Parse(inputText.text) == randomSayi)
+        {
+            StartCoroutine(Correct());
+        }
+        else
+        {
+            inputText.text = "";
+            StartCoroutine(Wrong());
+        }
     }
-    IEnumerator Info()
-    {
-        info.SetActive(true);
-        input.text = "";
-        yield return new WaitForSeconds(1f);
-        info.SetActive(false);
-        RandomSayi();
-        random.enabled = true;
-        yield return new WaitForSeconds(1f);
-        random.enabled = false;
-    }
+    
 }

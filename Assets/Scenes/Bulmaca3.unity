@@ -347,7 +347,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6693113, y: 0.21836147}
   m_AnchorMax: {x: 0.77541506, y: 0.38418075}
-  m_AnchoredPosition: {x: 0, y: 2.9169998}
+  m_AnchoredPosition: {x: 0, y: 2.9169922}
   m_SizeDelta: {x: -11.437698, y: -18.779602}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &372874690
@@ -456,7 +456,7 @@ GameObject:
   - component: {fileID: 708478927}
   - component: {fileID: 708478926}
   m_Layer: 5
-  m_Name: Info
+  m_Name: Rebember
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -709,12 +709,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7741c49607aff104eb533a2e88773147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: {fileID: 1482287313}
-  random: {fileID: 1026690871}
-  truePanel: {fileID: 1900484987}
-  falsePanel: {fileID: 790374977}
-  info: {fileID: 708478924}
+  numberText: {fileID: 1026690871}
+  inputText: {fileID: 1482287313}
+  rebember: {fileID: 708478926}
   bulmaca: {fileID: 212313582}
+  truePanel: {fileID: 1900484987}
+  FalsePanel: {fileID: 790374977}
 --- !u!4 &1082910921
 Transform:
   m_ObjectHideFlags: 0
