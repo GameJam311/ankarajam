@@ -15,7 +15,7 @@ public class KarakterKontroller : MonoBehaviour
 
     public bool getBattery = false;
     [SerializeField] GameObject f_light;
-
+    public GameObject MainCamera,MiniGame;
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
@@ -63,6 +63,15 @@ public class KarakterKontroller : MonoBehaviour
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
             transform.localScale = localScale;
+        }
+    }
+    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Sandik"))
+        {
+            MainCamera.SetActive(false);
+            MiniGame.SetActive(true);
         }
     }
 }
