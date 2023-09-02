@@ -5,7 +5,7 @@ using UnityEngine;
 public class KarakterKontroller : MonoBehaviour
 {
     private float horizontal;
-    private float speed = 8f;
+    private float speed = 10f;
     private float jumpingPower = 16f;
     private bool isFacingRight = true;
 
