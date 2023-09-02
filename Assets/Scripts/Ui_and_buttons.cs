@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Ui_and_buttons : MonoBehaviour
 {
     [SerializeField] GameObject infoPanel;
+    [SerializeField] GameObject pausePanel;
     public void understand()
     {
         infoPanel.SetActive(false);
@@ -18,5 +19,15 @@ public class Ui_and_buttons : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+    }
+    public void Pause()
+    {
+        pausePanel.SetActive(true);
+        Time.timeScale = 0f;
+    }
+    public void PauseExit()
+    {
+        pausePanel.SetActive(false);
+        Time.timeScale = 1f;
     }
 }
