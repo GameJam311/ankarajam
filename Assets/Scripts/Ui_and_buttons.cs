@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Ui_and_buttons : MonoBehaviour
 {
@@ -9,5 +10,13 @@ public class Ui_and_buttons : MonoBehaviour
     {
         infoPanel.SetActive(false);
         Time.timeScale = 1.0f;
+    }
+    public void Starter()
+    {
+        SceneManager.LoadScene("Giris");
+    }
+    public void Exit()
+    {
+        Application.Quit();
     }
 }
