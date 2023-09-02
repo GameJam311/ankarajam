@@ -42,7 +42,7 @@ public class BulmacaBirKarakter : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Enemy"))
         {
-            
+            print("oyun bitti");
         }
     }
 }
