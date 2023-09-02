@@ -12,6 +12,7 @@ public class KarakterKontroller : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private Animator animator;
 
     public bool getBattery = false;
     [SerializeField] GameObject f_light;
@@ -48,6 +49,14 @@ public class KarakterKontroller : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        if(rb.velocity.x > 0f || rb.velocity.x < 0f)
+        {
+            animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
     }
 
     private bool IsGrounded()
