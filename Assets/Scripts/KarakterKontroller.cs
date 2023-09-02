@@ -12,11 +12,15 @@ public class KarakterKontroller : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private Animator animator;
 
     public bool getBattery = false;
     [SerializeField] GameObject f_light;
-    public GameObject MainCamera,MiniGame;
+    public GameObject MainCamera,miniCam,MiniGame,pil;
+
+    public static bool MiniGameTamam = false;
+
+
+    [SerializeField] GameObject infoPanel;
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
@@ -42,21 +46,21 @@ public class KarakterKontroller : MonoBehaviour
             }
         }
 
-
+        Bulmaca();
         Flip();
     }
-
+    void Bulmaca()
+    {
+        if (MiniGameTamam)
+        {
+            MainCamera.SetActive(true);
+            miniCam.SetActive(false);
+            pil.SetActive(true);
+        }
+    }
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-        if(rb.velocity.x > 0f || rb.velocity.x < 0f)
-        {
-            animator.SetBool("isRunning", true);
-        }
-        else
-        {
-            animator.SetBool("isRunning", false);
-        }
     }
 
     private bool IsGrounded()
@@ -77,10 +81,18 @@ public class KarakterKontroller : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals("Sandik"))
+        if (collision.gameObject.tag.Equals("Sandik")&&!MiniGameTamam)
         {
             MainCamera.SetActive(false);
+            miniCam.SetActive(true);
             MiniGame.SetActive(true);
+        }
+        if (collision.CompareTag("Light"))
+        {
+            collision.gameObject.transform.position = new Vector3(transform.position.x, transform.position.y - 500, transform.position.z);
+            //infoPanel.SetActive(true);
+            getBattery = true;
+            //Time.timeScale = 0f;
         }
     }
 }
