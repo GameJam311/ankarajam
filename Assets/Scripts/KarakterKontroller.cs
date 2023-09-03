@@ -21,6 +21,12 @@ public class KarakterKontroller : MonoBehaviour
 
 
     [SerializeField] GameObject infoPanel;
+    AudioSource aSource;
+    public AudioClip jump, damage,gameStart,button,collect;
+    private void Start()
+    {
+        aSource = GetComponent<AudioSource>();
+    }
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
@@ -28,6 +34,7 @@ public class KarakterKontroller : MonoBehaviour
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            aSource.PlayOneShot(jump, 1f);
         }
 
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
@@ -36,6 +43,7 @@ public class KarakterKontroller : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.X) && getBattery)
         {
+            aSource.PlayOneShot(button, 1f);
             if (f_light.activeSelf)
             {
                 f_light.SetActive(false);
@@ -83,12 +91,14 @@ public class KarakterKontroller : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Sandik")&&!MiniGameTamam)
         {
+            aSource.PlayOneShot(gameStart, 1f);
             MainCamera.SetActive(false);
             miniCam.SetActive(true);
             MiniGame.SetActive(true);
         }
         if (collision.CompareTag("Light"))
         {
+            aSource.PlayOneShot(collect, 1f);
             collision.gameObject.transform.position = new Vector3(transform.position.x, transform.position.y - 500, transform.position.z);
             //infoPanel.SetActive(true);
             getBattery = true;

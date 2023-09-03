@@ -8,7 +8,12 @@ public class BulmacaBirKarakter : MonoBehaviour
     public float speed;
     public Transform namlu;
     public GameObject mermi,gameOverText,Kazandin;
-
+    AudioSource aS;
+    public AudioClip dead, win, shoot;
+    private void Start()
+    {
+        aS = GetComponent<AudioSource>();
+    }
     void Update()
     {
         Hareket();
@@ -39,14 +44,16 @@ public class BulmacaBirKarakter : MonoBehaviour
     public static bool isRestart = false;
     IEnumerator GameOver()
     {
+        aS.PlayOneShot(dead, 1f);
         gameOverText.SetActive(true);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         gameOverText.SetActive(false);
         isRestart = true;
     }
     IEnumerator Win()
     {
         Kazandin.SetActive(true);
+        aS.PlayOneShot(win, 1f);
         yield return new WaitForSeconds(1f);
         Kazandin.SetActive(false);
         KarakterKontroller.MiniGameTamam = true;
