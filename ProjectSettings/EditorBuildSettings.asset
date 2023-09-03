@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game/level_3.unity
     guid: bb1e46110d07f7342af9e44e63f57907
+  - enabled: 1
+    path: Assets/Scenes/BitisSinematik.unity
+    guid: 4d462058db1533e44993188df7d29ba7
   m_configObjects: {}
