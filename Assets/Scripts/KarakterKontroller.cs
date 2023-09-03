@@ -28,6 +28,7 @@ public class KarakterKontroller : MonoBehaviour
 
     [Header("Geri Tepme")]
     public float backwardForceMultiplier = 5f;
+    public static bool SahneGec = false;
     private void Start()
     {
         aSource = GetComponent<AudioSource>();
@@ -133,7 +134,7 @@ public class KarakterKontroller : MonoBehaviour
         }
         if (collision.CompareTag("Portal"))
         {
-
+            SahneGec = true;
         }
 
     }
