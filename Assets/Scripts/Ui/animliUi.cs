@@ -5,9 +5,11 @@ using UnityEngine;
 
 public class animliUi : MonoBehaviour
 {
-    Vector2 pos = new Vector2 (2.4f, 2.4f);
+    public float scalevalue, floattime;
+    
     private void OnEnable()
     {
+        Vector2 pos = new Vector2(scalevalue, floattime);
         transform.DOScale(pos,1f).SetEase(Ease.OutElastic);
     }
 }
