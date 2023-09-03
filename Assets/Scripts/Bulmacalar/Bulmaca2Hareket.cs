@@ -64,7 +64,11 @@ public class Bulmaca2Hareket : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Kapi"))
         {
-            print("oyun tamam");
+            KarakterKontroller.MiniGameTamam = true;
+        }
+        if (collision.gameObject.tag.Equals("Buton"))
+        {
+            
         }
     }
 }

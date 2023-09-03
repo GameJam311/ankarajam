@@ -27,9 +27,12 @@ public class KarakterKontroller : MonoBehaviour
     {
         aSource = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
+        MiniGameTamam = false;
+        
     }
     void Update()
     {
+        print(MiniGameTamam);
         horizontal = Input.GetAxisRaw("Horizontal");
         if (horizontal != 0)
         {
@@ -112,7 +115,7 @@ public class KarakterKontroller : MonoBehaviour
         if (collision.CompareTag("Light"))
         {
             aSource.PlayOneShot(collect, 1f);
-            collision.gameObject.transform.position = new Vector3(transform.position.x, transform.position.y - 500, transform.position.z);
+            collision.gameObject.transform.position = new Vector3(transform.position.x+5000, transform.position.y - 5000, transform.position.z+5000);
             //infoPanel.SetActive(true);
             getBattery = true;
             //Time.timeScale = 0f;
