@@ -18,4 +18,8 @@ public class Button : MonoBehaviour
     {
         aSource.PlayOneShot(ses, 1f);
     }
+    public void Cikis()
+    {
+        Application.Quit();
+    }
 }
