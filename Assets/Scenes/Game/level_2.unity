@@ -1707,7 +1707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   images: []
   next: {fileID: 0}
-  pausepanel: {fileID: 0}
+  pausepanel: {fileID: 1951552932}
 --- !u!224 &627861706
 RectTransform:
   m_ObjectHideFlags: 0
