@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class animliUi : MonoBehaviour
 {
-    Vector2 pos = new Vector2 (2.4f, 2.4f);
+    Vector2 pos = new Vector2 (5f, 5f);
     private void OnEnable()
     {
         transform.DOScale(pos,1f).SetEase(Ease.OutElastic);

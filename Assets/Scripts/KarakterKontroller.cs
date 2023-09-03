@@ -16,7 +16,7 @@ public class KarakterKontroller : MonoBehaviour
 
     public bool getBattery = false;
     [SerializeField] GameObject f_light;
-    public GameObject MainCamera, miniCam, MiniGame, pil, fenerke;
+    public GameObject MainCamera, miniCam, MiniGame, pil, fenerke,harbiFener;
 
     public static bool MiniGameTamam = false;
 
@@ -30,6 +30,8 @@ public class KarakterKontroller : MonoBehaviour
     public float backwardForceMultiplier = 5f;
     public static bool SahneGec = false;
     public static bool GameOver = false;
+
+    [SerializeField] GameObject wall,wall2;
     private void Start()
     {
         aSource = GetComponent<AudioSource>();
@@ -91,6 +93,8 @@ public class KarakterKontroller : MonoBehaviour
             MainCamera.SetActive(true);
             miniCam.SetActive(false);
             pil.SetActive(true);
+            wall.GetComponent<BoxCollider2D>().isTrigger = true;
+            wall2.GetComponent<BoxCollider2D>().isTrigger = true;
         }
     }
     private void FixedUpdate()
@@ -122,12 +126,15 @@ public class KarakterKontroller : MonoBehaviour
             MainCamera.SetActive(false);
             miniCam.SetActive(true);
             MiniGame.SetActive(true);
+            wall.GetComponent<BoxCollider2D>().isTrigger = false;
+            wall2.GetComponent<BoxCollider2D>().isTrigger = false;
         }
         if (collision.CompareTag("Light"))
         {
             aSource.PlayOneShot(collect, 1f);
             collision.gameObject.transform.position = new Vector3(transform.position.x + 5000, transform.position.y - 5000, transform.position.z + 5000);
             //infoPanel.SetActive(true);
+            harbiFener.SetActive(true);
             getBattery = true;
             //Time.timeScale = 0f;
         }
@@ -145,6 +152,7 @@ public class KarakterKontroller : MonoBehaviour
     public void BolumGec()
     {
         MiniGameTamam = true;
+
     }
     public void Recoil()// geri tepme
     {

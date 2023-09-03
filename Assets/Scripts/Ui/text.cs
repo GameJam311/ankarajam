@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class text : MonoBehaviour
 {
-    Vector2 pos = new Vector2(1.1f, 1.1f);
+    Vector2 pos = new Vector2(2.1f, 2.1f);
     public TextMeshProUGUI next;
     bool altýoldu = false;
 
