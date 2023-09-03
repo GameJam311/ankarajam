@@ -14,7 +14,7 @@ public class Ui_and_buttons : MonoBehaviour
     }
     public void Starter()
     {
-        SceneManager.LoadScene("Giris");
+        SceneManager.LoadScene("GirisSinematik");
     }
     public void Exit()
     {

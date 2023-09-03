@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Ui.unity
     guid: 024880c4ec0d95d4c973c2c49aa02a82
   - enabled: 1
-    path: Assets/Scenes/Game.unity
-    guid: 8ce5d3d3915dc5742978b46e7779aa21
+    path: Assets/Scenes/GirisSinematik.unity
+    guid: 129e04bb974d96d4eb84ea7b40e66d30
+  - enabled: 1
+    path: Assets/Scenes/Game/level_1.unity
+    guid: 31f0ffea1acad504b91c86db5ced0575
+  - enabled: 1
+    path: Assets/Scenes/Game/level_2.unity
+    guid: c90696d8875e4134bb88cede92711dc4
+  - enabled: 1
+    path: Assets/Scenes/Game/level_3.unity
+    guid: bb1e46110d07f7342af9e44e63f57907
   m_configObjects: {}
