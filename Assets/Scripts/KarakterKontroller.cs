@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class KarakterKontroller : MonoBehaviour
@@ -15,20 +16,25 @@ public class KarakterKontroller : MonoBehaviour
 
     public bool getBattery = false;
     [SerializeField] GameObject f_light;
-    public GameObject MainCamera,miniCam,MiniGame,pil;
+    public GameObject MainCamera, miniCam, MiniGame, pil;
 
     public static bool MiniGameTamam = false;
 
     [SerializeField] GameObject infoPanel;
     AudioSource aSource;
     Animator anim;
-    public AudioClip jump, damage,gameStart,button,collect;
+    Animator camanim;
+    public AudioClip jump, damage, gameStart, button, collect;
+
+    [Header("Geri Tepme")]
+    public float backwardForceMultiplier = 5f;
     private void Start()
     {
         aSource = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         MiniGameTamam = false;
-        
+        camanim = Camera.main.GetComponent<Animator>();
+
     }
     void Update()
     {
@@ -101,10 +107,10 @@ public class KarakterKontroller : MonoBehaviour
             transform.localScale = localScale;
         }
     }
-    
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals("Sandik")&&!MiniGameTamam)
+        if (collision.gameObject.tag.Equals("Sandik") && !MiniGameTamam)
         {
             aSource.PlayOneShot(gameStart, 1f);
             MainCamera.SetActive(false);
@@ -114,15 +120,37 @@ public class KarakterKontroller : MonoBehaviour
         if (collision.CompareTag("Light"))
         {
             aSource.PlayOneShot(collect, 1f);
-            collision.gameObject.transform.position = new Vector3(transform.position.x+5000, transform.position.y - 5000, transform.position.z+5000);
+            collision.gameObject.transform.position = new Vector3(transform.position.x + 5000, transform.position.y - 5000, transform.position.z + 5000);
             //infoPanel.SetActive(true);
             getBattery = true;
             //Time.timeScale = 0f;
         }
+        if (collision.CompareTag("saw"))
+        {
+            Debug.Log("geri tepti");
+            Recoil();
+
+        }
+
     }
     IEnumerator jumpwait()
     {
         yield return new WaitForSeconds(0.8f);
         anim.SetTrigger("backidle");
+    }
+    public void Recoil()// geri tepme
+    {
+
+        Debug.Log("geri tepti:" + backwardForceMultiplier);
+        Vector2 backwardVelocity = -transform.right * backwardForceMultiplier;
+        rb.velocity = backwardVelocity;
+
+        if (isFacingRight != isFacingRight)
+        {
+            Flip();
+            backwardVelocity = transform.right * backwardForceMultiplier;
+            rb.velocity = backwardVelocity;
+        }
+
     }
 }
