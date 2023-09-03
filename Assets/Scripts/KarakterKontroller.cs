@@ -131,6 +131,10 @@ public class KarakterKontroller : MonoBehaviour
             Recoil();
 
         }
+        if (collision.CompareTag("Portal"))
+        {
+
+        }
 
     }
     IEnumerator jumpwait()

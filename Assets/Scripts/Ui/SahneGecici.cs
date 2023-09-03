@@ -1,18 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SahneGecici : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Animator siyahPanel;
+    string x;
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SahneGec(string sahne)
     {
-        
+        x = sahne;
+        StartCoroutine(Karart());
+    }
+    IEnumerator Karart()
+    {
+        siyahPanel.SetTrigger("Karart");
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(x);
     }
 }
