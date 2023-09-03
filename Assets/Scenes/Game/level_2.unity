@@ -1847,6 +1847,11 @@ Transform:
   m_Father: {fileID: 820851144}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1173121022 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3582228875707360622, guid: 9aee9b1a492222c41875d10474e2ba03, type: 3}
+  m_PrefabInstance: {fileID: 3582228874710434448}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1257394563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2453,6 +2458,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1673384542}
   - component: {fileID: 1673384541}
+  - component: {fileID: 1673384543}
   m_Layer: 0
   m_Name: sandik_0
   m_TagString: Untagged
@@ -2527,6 +2533,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1673384543
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673384540}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.04581648, y: -0.03665307}
+  serializedVersion: 2
+  m_Radius: 0.24416342
 --- !u!1001 &1674348962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3686,7 +3708,7 @@ MonoBehaviour:
   MainCamera: {fileID: 0}
   miniCam: {fileID: 0}
   MiniGame: {fileID: 0}
-  pil: {fileID: 0}
+  pil: {fileID: 1173121022}
   infoPanel: {fileID: 0}
   jump: {fileID: 0}
   damage: {fileID: 0}
@@ -3804,6 +3826,10 @@ PrefabInstance:
     - target: {fileID: 3582228875707360622, guid: 9aee9b1a492222c41875d10474e2ba03, type: 3}
       propertyPath: m_Name
       value: pil
+      objectReference: {fileID: 0}
+    - target: {fileID: 3582228875707360622, guid: 9aee9b1a492222c41875d10474e2ba03, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3582228875707361936, guid: 9aee9b1a492222c41875d10474e2ba03, type: 3}
       propertyPath: m_RootOrder
