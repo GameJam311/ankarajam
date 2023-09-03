@@ -44,11 +44,15 @@ public class KarakterKontroller : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             aSource.PlayOneShot(jump, 1f);
+            anim.SetTrigger("jump");
+            StartCoroutine("jumpwait");
         }
 
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            anim.SetTrigger("jump");
+            StartCoroutine("jumpwait");
         }
         if (Input.GetKeyDown(KeyCode.X) && getBattery)
         {
@@ -113,5 +117,10 @@ public class KarakterKontroller : MonoBehaviour
             getBattery = true;
             //Time.timeScale = 0f;
         }
+    }
+    IEnumerator jumpwait()
+    {
+        yield return new WaitForSeconds(0.8f);
+        anim.SetTrigger("backidle");
     }
 }
