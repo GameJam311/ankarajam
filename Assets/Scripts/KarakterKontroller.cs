@@ -126,12 +126,6 @@ public class KarakterKontroller : MonoBehaviour
             getBattery = true;
             //Time.timeScale = 0f;
         }
-        if (collision.CompareTag("saw"))
-        {
-            Debug.Log("geri tepti");
-            Recoil();
-
-        }
         /*
         if (collision.CompareTag("Portal"))
         {
@@ -154,7 +148,7 @@ public class KarakterKontroller : MonoBehaviour
         Vector2 backwardVelocity = -transform.right * backwardForceMultiplier;
         rb.velocity = backwardVelocity;
 
-        if (isFacingRight != isFacingRight)
+        if (isFacingRight)
         {
             Flip();
             backwardVelocity = transform.right * backwardForceMultiplier;

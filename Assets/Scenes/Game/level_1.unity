@@ -1924,7 +1924,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 49263644, guid: 70163085d6db23c4eac522f6432ad83b, type: 3}
+  m_Sprite: {fileID: 1058596068, guid: 70163085d6db23c4eac522f6432ad83b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6471,7 +6471,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 49263644, guid: 70163085d6db23c4eac522f6432ad83b, type: 3}
+  m_Sprite: {fileID: 1058596068, guid: 70163085d6db23c4eac522f6432ad83b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7284,9 +7284,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kalps:
-  - {fileID: 1389817834}
-  - {fileID: 384356105}
-  - {fileID: 2127519424}
+  - {fileID: 1389817836}
+  - {fileID: 384356107}
+  - {fileID: 2127519426}
+  kalpeksiImage: {fileID: -2039744728, guid: 70163085d6db23c4eac522f6432ad83b, type: 3}
 --- !u!1 &1804805187
 GameObject:
   m_ObjectHideFlags: 0
@@ -9529,7 +9530,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 49263644, guid: 70163085d6db23c4eac522f6432ad83b, type: 3}
+  m_Sprite: {fileID: 1058596068, guid: 70163085d6db23c4eac522f6432ad83b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

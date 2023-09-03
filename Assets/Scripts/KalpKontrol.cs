@@ -1,21 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class KalpKontrol : MonoBehaviour
 {
-    public List<GameObject> kalps = new List<GameObject>();
+    public List<Image> kalps = new List<Image>();
     int currentkalp = 2;
+    [SerializeField]
+    public Sprite kalpeksiImage;
 
     public void kalpeksi()
     {
-        if(currentkalp <= 0)
+        kalps[currentkalp].sprite = kalpeksiImage;
+        currentkalp--;
+        if (currentkalp <= 0)
         {
             currentkalp = 0;
             //ölüm ekranýný buraya yazcan
-        }
-        kalps[currentkalp].SetActive(false);
-        currentkalp--;
+        }    
         //kalp seslerini bura yazcan
     }
 }

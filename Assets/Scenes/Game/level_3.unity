@@ -891,7 +891,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 49263644, guid: 70163085d6db23c4eac522f6432ad83b, type: 3}
+  m_Sprite: {fileID: 1058596068, guid: 70163085d6db23c4eac522f6432ad83b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1330,9 +1330,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kalps:
-  - {fileID: 949471847}
-  - {fileID: 1096477973}
-  - {fileID: 191851068}
+  - {fileID: 949471849}
+  - {fileID: 1096477975}
+  - {fileID: 191851070}
+  kalpeksiImage: {fileID: -2039744728, guid: 70163085d6db23c4eac522f6432ad83b, type: 3}
 --- !u!114 &379290913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3242,7 +3243,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 49263644, guid: 70163085d6db23c4eac522f6432ad83b, type: 3}
+  m_Sprite: {fileID: 1058596068, guid: 70163085d6db23c4eac522f6432ad83b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3394,7 +3395,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 49263644, guid: 70163085d6db23c4eac522f6432ad83b, type: 3}
+  m_Sprite: {fileID: 1058596068, guid: 70163085d6db23c4eac522f6432ad83b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
