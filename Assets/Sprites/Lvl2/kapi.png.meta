@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8d29f8bb1434a874881c104b7ce835f0
+guid: ff98f25648753da4cb156ac8e6342418
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -130,13 +130,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: portal_0
+      name: kapi_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 82
-        height: 82
+        x: 19
+        y: 25
+        width: 27
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,50 +144,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4231aec64bba4964d9fbacc193d8ae73
-      internalID: -756142368
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: portal_1
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 0
-        width: 82
-        height: 82
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d73a6f569c6459f4ebb49f19c6ea4da8
-      internalID: 138053114
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: portal_2
-      rect:
-        serializedVersion: 2
-        x: 164
-        y: 0
-        width: 82
-        height: 82
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 96cfc70298d0c544ab48ad4dc968f07b
-      internalID: -164333182
+      spriteID: 8620a12704691d044918bd7efe03a103
+      internalID: 36174371
       vertices: []
       indices: 
       edges: []
@@ -203,9 +161,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      portal_0: -756142368
-      portal_1: 138053114
-      portal_2: -164333182
+      kapi_0: 36174371
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

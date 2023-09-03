@@ -29,6 +29,7 @@ public class KarakterKontroller : MonoBehaviour
     [Header("Geri Tepme")]
     public float backwardForceMultiplier = 5f;
     public static bool SahneGec = false;
+    public static bool GameOver = false;
     private void Start()
     {
         aSource = GetComponent<AudioSource>();
@@ -39,7 +40,11 @@ public class KarakterKontroller : MonoBehaviour
     }
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
+        if (!GameOver)
+        {
+            horizontal = Input.GetAxisRaw("Horizontal");
+        }
+        
         if (horizontal != 0)
         {
             anim.SetBool("Run", true);
@@ -126,11 +131,11 @@ public class KarakterKontroller : MonoBehaviour
             getBattery = true;
             //Time.timeScale = 0f;
         }
-        /*
+        
         if (collision.CompareTag("Portal"))
         {
-            //SahneGec = true;
-        }*/
+            SahneGec = true;
+        }
     }
     IEnumerator jumpwait()
     {

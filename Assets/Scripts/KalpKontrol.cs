@@ -9,7 +9,15 @@ public class KalpKontrol : MonoBehaviour
     int currentkalp = 2;
     [SerializeField]
     public Sprite kalpeksiImage;
-
+    AudioSource ses;
+    public AudioClip damage;
+    public GameObject GameOver;
+    private void Start()
+    {
+        ses = GetComponent<AudioSource>();
+        GameOver.SetActive(false);
+        KarakterKontroller.GameOver = false;
+    }
     public void kalpeksi()
     {
         kalps[currentkalp].sprite = kalpeksiImage;
@@ -17,8 +25,13 @@ public class KalpKontrol : MonoBehaviour
         if (currentkalp <= 0)
         {
             currentkalp = 0;
-            //ölüm ekranýný buraya yazcan
-        }    
-        //kalp seslerini bura yazcan
+            KarakterKontroller.GameOver = true;
+            GameOver.SetActive(true);
+        }
+        if (!KarakterKontroller.GameOver)
+        {
+            ses.PlayOneShot(damage, 1f);
+        }
+        
     }
 }

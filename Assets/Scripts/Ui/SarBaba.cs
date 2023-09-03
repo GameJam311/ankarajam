@@ -10,11 +10,17 @@ public class SarBaba : MonoBehaviour
     int currentIndex = 1;
     public GameEvent next;
     public GameObject pausepanel;
-
+    public AudioClip zort;
+    AudioSource ses;
+    private void Start()
+    {
+        ses = GetComponent<AudioSource>();
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            ses.PlayOneShot(zort, 1f);
             if(currentIndex >= 5)
             {
                 currentIndex = 5;
