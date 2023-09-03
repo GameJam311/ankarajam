@@ -10,7 +10,8 @@ public class Tuorial : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             tutorialpanel.SetActive(true);
-            Time.timeScale = 0.3f;
+            Time.timeScale = 0f;
+            this.gameObject.SetActive(false);
         }      
     }
 }

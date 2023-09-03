@@ -7,6 +7,8 @@ public class Ui_and_buttons : MonoBehaviour
 {
     [SerializeField] GameObject infoPanel;
     [SerializeField] GameObject pausePanel;
+    [SerializeField] GameObject tutorialpanel;
+    [SerializeField] GameEvent feneraktif;
     public void understand()
     {
         infoPanel.SetActive(false);
@@ -29,5 +31,11 @@ public class Ui_and_buttons : MonoBehaviour
     {
         pausePanel.SetActive(false);
         Time.timeScale = 1f;
+    }
+    public void tutorialexit()
+    {
+        tutorialpanel.SetActive(false);
+        Time.timeScale = 1.0f;
+        feneraktif.Raise();
     }
 }

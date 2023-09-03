@@ -15,7 +15,7 @@ public class KarakterKontroller : MonoBehaviour
 
     public bool getBattery = false;
     [SerializeField] GameObject f_light;
-    public GameObject MainCamera,miniCam,MiniGame,pil;
+    public GameObject MainCamera,miniCam,MiniGame,pil,fenerke;
 
     public static bool MiniGameTamam = false;
 
@@ -124,5 +124,9 @@ public class KarakterKontroller : MonoBehaviour
     {
         yield return new WaitForSeconds(0.8f);
         anim.SetTrigger("backidle");
+    }
+    public void tutorialstuff()
+    {
+        fenerke.SetActive(true);
     }
 }
