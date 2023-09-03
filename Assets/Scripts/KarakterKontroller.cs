@@ -5,8 +5,8 @@ using UnityEngine;
 public class KarakterKontroller : MonoBehaviour
 {
     private float horizontal;
-    private float speed = 10f;
-    private float jumpingPower = 20f;
+    public float speed = 10f;
+    public float jumpingPower = 20f;
     private bool isFacingRight = true;
 
     [SerializeField] private Rigidbody2D rb;
