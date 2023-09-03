@@ -6,6 +6,12 @@ TagManager:
   tags:
   - Zemin
   - Light
+  - Enemy
+  - Bulmaca
+  - Bitis
+  - HideObject
+  - Sandik
+  - dikey
   layers:
   - Default
   - TransparentFX

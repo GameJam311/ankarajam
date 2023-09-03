@@ -6,7 +6,7 @@ public class KarakterKontroller : MonoBehaviour
 {
     private float horizontal;
     private float speed = 10f;
-    private float jumpingPower = 16f;
+    private float jumpingPower = 20f;
     private bool isFacingRight = true;
 
     [SerializeField] private Rigidbody2D rb;
@@ -18,7 +18,6 @@ public class KarakterKontroller : MonoBehaviour
     public GameObject MainCamera,miniCam,MiniGame,pil;
 
     public static bool MiniGameTamam = false;
-
 
     [SerializeField] GameObject infoPanel;
     AudioSource aSource;
