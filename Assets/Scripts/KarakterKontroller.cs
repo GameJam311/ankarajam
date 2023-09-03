@@ -132,10 +132,11 @@ public class KarakterKontroller : MonoBehaviour
             Recoil();
 
         }
+        /*
         if (collision.CompareTag("Portal"))
         {
-            SahneGec = true;
-        }
+            //SahneGec = true;
+        }*/
     }
     IEnumerator jumpwait()
     {
@@ -159,6 +160,5 @@ public class KarakterKontroller : MonoBehaviour
     public void tutorialstuff()
     {
         fenerke.SetActive(true);
-        Time.timeScale = 1.0f;
     }
 }
