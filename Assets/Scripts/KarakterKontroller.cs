@@ -143,6 +143,10 @@ public class KarakterKontroller : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
         anim.SetTrigger("backidle");
     }
+    public void BolumGec()
+    {
+        MiniGameTamam = true;
+    }
     public void Recoil()// geri tepme
     {
 
