@@ -16,7 +16,7 @@ public class KarakterKontroller : MonoBehaviour
 
     public bool getBattery = false;
     [SerializeField] GameObject f_light;
-    public GameObject MainCamera, miniCam, MiniGame, pil;
+    public GameObject MainCamera, miniCam, MiniGame, pil, fenerke;
 
     public static bool MiniGameTamam = false;
 
@@ -136,7 +136,6 @@ public class KarakterKontroller : MonoBehaviour
         {
             SahneGec = true;
         }
-
     }
     IEnumerator jumpwait()
     {
@@ -156,6 +155,10 @@ public class KarakterKontroller : MonoBehaviour
             backwardVelocity = transform.right * backwardForceMultiplier;
             rb.velocity = backwardVelocity;
         }
-
+    }
+    public void tutorialstuff()
+    {
+        fenerke.SetActive(true);
+        Time.timeScale = 1.0f;
     }
 }
