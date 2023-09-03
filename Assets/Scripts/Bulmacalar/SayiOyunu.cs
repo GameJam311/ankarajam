@@ -13,11 +13,16 @@ public class SayiOyunu : MonoBehaviour
     bool isDisplayingDigit = true;
 
     public Text numberText,inputText,rebember;
-    public GameObject bulmaca,truePanel,FalsePanel;
+    public GameObject bulmaca;
+    public InputField inputField;
+    public Image isik;
+    public Sprite yesil;
 
+    public AudioClip wrong, correct;
+    AudioSource aSource;
     void Start()
     {
-        
+        aSource = GetComponent<AudioSource>();
         GenerateRandomNumber();
         StartCoroutine(DisplayNumber());
     }
@@ -55,18 +60,21 @@ public class SayiOyunu : MonoBehaviour
     }
     IEnumerator Wrong()
     {
-        FalsePanel.SetActive(true);
-        yield return new WaitForSeconds(1f);
-        FalsePanel.SetActive(false);
+        aSource.PlayOneShot(wrong, 1f);
+     
+        yield return new WaitForSeconds(0.5f);
+        
         GenerateRandomNumber();
         StartCoroutine(DisplayNumber());
     }
     IEnumerator Correct()
     {
-        truePanel.SetActive(true);
+        aSource.PlayOneShot(correct, 1f);
+        isik.GetComponent<Image>().sprite = yesil;
+       
         yield return new WaitForSeconds(1f);
         bulmaca.SetActive(false);
-        
+        KarakterKontroller.MiniGameTamam = true;
     }
     public void Dogrula()
     {
@@ -77,6 +85,7 @@ public class SayiOyunu : MonoBehaviour
         else
         {
             inputText.text = "";
+            inputField.text = "";
             StartCoroutine(Wrong());
         }
     }

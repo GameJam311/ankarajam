@@ -32,7 +32,6 @@ public class KarakterKontroller : MonoBehaviour
     }
     void Update()
     {
-        print(MiniGameTamam);
         horizontal = Input.GetAxisRaw("Horizontal");
         if (horizontal != 0)
         {
