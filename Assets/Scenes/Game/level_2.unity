@@ -5714,6 +5714,8 @@ MonoBehaviour:
   backwardForceMultiplier: 5
   wall: {fileID: 0}
   wall2: {fileID: 0}
+  pause: {fileID: 0}
+  yok: {fileID: 0}
 --- !u!50 &1715327494
 Rigidbody2D:
   serializedVersion: 4
@@ -6087,6 +6089,77 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1781528542
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2110687780692289784, guid: dd3143ff6ba0d644e81a1a9b1304ebfc, type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110687780692289784, guid: dd3143ff6ba0d644e81a1a9b1304ebfc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110687780692289784, guid: dd3143ff6ba0d644e81a1a9b1304ebfc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110687780692289784, guid: dd3143ff6ba0d644e81a1a9b1304ebfc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110687780692289784, guid: dd3143ff6ba0d644e81a1a9b1304ebfc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 20.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110687780692289784, guid: dd3143ff6ba0d644e81a1a9b1304ebfc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110687780692289784, guid: dd3143ff6ba0d644e81a1a9b1304ebfc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110687780692289784, guid: dd3143ff6ba0d644e81a1a9b1304ebfc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110687780692289784, guid: dd3143ff6ba0d644e81a1a9b1304ebfc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110687780692289784, guid: dd3143ff6ba0d644e81a1a9b1304ebfc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110687780692289784, guid: dd3143ff6ba0d644e81a1a9b1304ebfc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110687780692289784, guid: dd3143ff6ba0d644e81a1a9b1304ebfc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110687780692289784, guid: dd3143ff6ba0d644e81a1a9b1304ebfc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110687780692289784, guid: dd3143ff6ba0d644e81a1a9b1304ebfc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2110687780692289787, guid: dd3143ff6ba0d644e81a1a9b1304ebfc, type: 3}
+      propertyPath: m_Name
+      value: barikat
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: dd3143ff6ba0d644e81a1a9b1304ebfc, type: 3}
 --- !u!4 &1794012559 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6584178406501203919, guid: dd9a52acc7473bf4caaf211205e11569, type: 3}
@@ -7726,6 +7799,8 @@ MonoBehaviour:
   backwardForceMultiplier: 5
   wall: {fileID: 1280240141}
   wall2: {fileID: 352173186}
+  pause: {fileID: 0}
+  yok: {fileID: 11400000, guid: 135c114099b7c01448f51d5cb2b84c70, type: 2}
 --- !u!50 &1602678840275023343
 Rigidbody2D:
   serializedVersion: 4

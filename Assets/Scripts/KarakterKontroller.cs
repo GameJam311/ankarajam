@@ -32,6 +32,8 @@ public class KarakterKontroller : MonoBehaviour
     public static bool GameOver = false;
 
     [SerializeField] GameObject wall,wall2;
+    [SerializeField] GameObject pause;
+    public GameEvent yok;
     private void Start()
     {
         aSource = GetComponent<AudioSource>();
@@ -95,6 +97,7 @@ public class KarakterKontroller : MonoBehaviour
             pil.SetActive(true);
             wall.GetComponent<BoxCollider2D>().isTrigger = true;
             wall2.GetComponent<BoxCollider2D>().isTrigger = true;
+            pause.SetActive(true);
         }
     }
     private void FixedUpdate()
@@ -128,6 +131,7 @@ public class KarakterKontroller : MonoBehaviour
             MiniGame.SetActive(true);
             wall.GetComponent<BoxCollider2D>().isTrigger = false;
             wall2.GetComponent<BoxCollider2D>().isTrigger = false;
+            pause.SetActive(false);
         }
         if (collision.CompareTag("Light"))
         {
@@ -136,6 +140,7 @@ public class KarakterKontroller : MonoBehaviour
             //infoPanel.SetActive(true);
             harbiFener.SetActive(true);
             getBattery = true;
+            yok.Raise();
             //Time.timeScale = 0f;
         }
         
