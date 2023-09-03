@@ -22,14 +22,24 @@ public class KarakterKontroller : MonoBehaviour
 
     [SerializeField] GameObject infoPanel;
     AudioSource aSource;
+    Animator anim;
     public AudioClip jump, damage,gameStart,button,collect;
     private void Start()
     {
         aSource = GetComponent<AudioSource>();
+        anim = GetComponent<Animator>();
     }
     void Update()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
+        if (horizontal != 0)
+        {
+            anim.SetBool("Run", true);
+        }
+        else
+        {
+            anim.SetBool("Run", false);
+        }
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
